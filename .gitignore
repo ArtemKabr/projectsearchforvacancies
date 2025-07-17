@@ -1,0 +1,37 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+.env
+.env.*
+
+# PyCharm
+.idea/
+*.iml
+
+# VSCode
+.vscode/
+
+# Test & coverage artifacts
+.cache/
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+
+# Poetry
+poetry.lock
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Local JSON data
+vacancies.json

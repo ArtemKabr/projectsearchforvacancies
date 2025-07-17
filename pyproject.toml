@@ -1,0 +1,28 @@
+[project]
+name = "projectsearchforvacancies"
+version = "0.1.0"
+description = "Курсовой проект: интеграция с hh.ru и управление вакансиями"
+authors = [
+    {name = "Artem Kabritskii",email = "artemkabr7@gmail.com"}
+]
+readme = "README.md"
+requires-python = "^3.11"
+dependencies = [
+    "requests (>=2.32.4,<3.0.0)",
+    "pytest (>=8.4.1,<9.0.0)",
+    "black (>=25.1.0,<26.0.0)",
+    "flake8 (>=7.3.0,<8.0.0)",
+    "isort (>=6.0.1,<7.0.0)",
+    "mypy (>=1.17.0,<2.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^4.2.0"
+coverage = "^7.9.2"
+types-requests = "^2.32.4.20250611"
+

@@ -11,11 +11,20 @@ def user_interaction() -> None:
     """
     Функция взаимодействия с пользователем через консоль.
     """
-    api = HeadHunterAPI()
-    storage = JSONSaver()
-
     print("=== Поиск вакансий на hh.ru ===")
     query: str = input("Введите поисковый запрос: ").strip()
+
+    try:
+        pages = int(
+            input(
+                "Введите количество страниц для загрузки (по 100 вакансий на страницу): "
+            )
+        )
+    except ValueError:
+        pages = 1
+
+    api = HeadHunterAPI(pages=pages)
+    storage = JSONSaver()
 
     print("Загружаем вакансии...")
     raw_vacancies: list[dict[str, Any]] = api.get_vacancies(query)
@@ -36,7 +45,6 @@ def user_interaction() -> None:
 
     keyword: str = input("Введите ключевое слово для фильтрации по описанию: ").strip()
     filtered: list[Vacancy] = filter_by_keyword(vacancies, keyword)
-
     sorted_vacancies: list[Vacancy] = sort_vacancies_by_salary(filtered)
 
     try:
